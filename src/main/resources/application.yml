@@ -1,1 +1,6 @@
 
+# adres pod jakim ma startowac aplikacja
+# localhost8080/gallery/
+server:
+  servlet:
+    context-path: /gallery

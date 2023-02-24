@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>Title</title>
+    <meta charset="UTF-8">
+    <title th:text="${pictur.title}">Galeria zdjęć</title>
+    <link rel="stylesheet" th:href="@{/styles/styles.css}">
 </head>
 <body>
-
+    <div class="container">
+        <img th:src="@{|/images/${pictur.getFileName()}|}" th:alt="${pictur.title}" class="pic">
+        <p th:text="${pictur.title}"></p>
+        <p><a th:href="@{/}">Strona główna</a></p>
+    </div>
 </body>
 </html>
