@@ -3,15 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <title>Galeria zdjęć</title>
-    <link rel="stylesheet" th:href="@{/styles/styles.css}">
+    <link rel="stylesheet" th:href="@{/styles/styles.css}" href="../static/styles/styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Galeria zdjęć</h1>
-        <img th:src="@{/images/gallery.jpg}" alt="galeria obrazek">
+<div class="container">
+    <h1>Galeria zdjęć</h1>
+
+    <!--    jezeli chcemy aby z danej listy wymienionych tylko jeden był widoczny przy stacie apliakcji dodajemy
+            th:remove ="all-but-first"-->
+    <img th:src="@{/images/gallery.jpg}" alt="galeria obrazek" src="../static/images/gallery.jpg">
+
+    <div th:remove="all-but-first">
         <p th:each="pic:${picture}">
             <a th:href="@{|/pic?id=${pic.id}|}" th:text="${pic.title}">Przykładowe zdjęcie</a>
+
+        </p>
+
+        <!--    jeżeli chcemy aby dany element był widoczny podczas pracy na nim ale usunięty po starcie aplikacji dodajemy mu -->
+        <!--    <p th:remove="all">-->
+        <!--        <a href="#">Przykładowe zdjęcie nr 1 </a>-->
+        <!--    </p>-->
+        <!--    -->
+        <p>
+            <a href="#">Przykładowe zdjęcie nr 1 </a>
+        </p>
+
+        <p>
+            <a href="#">Przykładowe zdjęcie nr 2 </a>
+        </p>
+        <p>
+            <a href="#">Przykładowe zdjęcie nr 3 </a>
         </p>
     </div>
+</div>
 </body>
 </html>

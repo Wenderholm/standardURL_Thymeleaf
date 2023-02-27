@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title th:text="${pictur.title}">Galeria zdjęć</title>
-    <link rel="stylesheet" th:href="@{/styles/styles.css}">
+    <link rel="stylesheet" th:href="@{/styles/styles.css}" href="../static/styles/styles.css">
 </head>
 <body>
-    <div class="container">
-        <img th:src="@{|/images/${pictur.getFileName()}|}" th:alt="${pictur.title}" class="pic">
-        <p th:text="${pictur.title}"></p>
-        <p><a th:href="@{/}">Strona główna</a></p>
-    </div>
+<div class="container">
+    <img th:src="@{|/images/${pictur.getFileName()}|}"
+         th:alt="${pictur.title}"
+         class="pic"
+         src="../static/images/dog.jpg"
+         alt="Pies"
+    >
+    <p th:text="${pictur.title}"></p>
+    <p><a th:href="@{/}">Strona główna</a></p>
+</div>
 </body>
 </html>
